@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apps</title>
+    <link rel="stylesheet" href="../CSS/style.css">
+    <link rel="stylesheet" href="../CSS/plantIdentifier.css"> <!--PlantIdentifier CSS-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="../JS/PlantIdentifier_Web.js"></script>
+    <script src="../JS/contentLoader.js"></script>
+    <script src="../JS/script.js"></script>
+</head>
+<body>
+    <div id="header">
+    </div>
+
+    <div class="main_content">
+        <div class="applicationsContent">
+            <h2>Applications</h2>
+            <h3>In this section you can find previews of the web-accessible apps I have made, 
+                as well as links to any external applications for you to try. My most used programming languages are
+                Python, Java and C#, and most of these projects will be made from one of these. All of these, and more,
+                are published on my GitHub profile, which can be found at the bottom of the page.</h3>
+
+            <div>
+                <h1 id="PlantIdentifier">PlantIdentifier</h1>
+                <h2><em>A program which takes an input in the form of a list of plant names, in latin or english, 
+                    and produces a phylogenetic tree of those plants, categorizing them into their respective Kingdom, Phylum, Class, Order, Family, Genus and Species.</em></h2>
+
+                <p>
+                    This program was created as a result of a homework assignment in my sophomore Biology class, 
+                    in which I was supposed to obtain photographs of 25 or more different species of plants and create a phylogenetic tree
+                    dividing them all into their Kingdom, Phylum, Class, Order, Family, Genus and Species. This is where I decided to create a
+                    simple program to automate the entire process, as not only would I have had to manually search up these levels of classification
+                    for each plant individually, I would also have had to graphically design and create the phylogenetic tree itself, which would have ended
+                    up taking a long time.
+                </p>
+                <br>
+                <h3>Try it out!</h3>
+                <div class="appPreview">
+                    <div class="plantsInput">
+                        <h2>Enter plant names:</h2>
+                        <input type="text" id="plantSingleInput" placeholder="Copy list of plants here, separated by commas, or use the + button to add plants" value="">
+                        <button id="plantsListAdd" onclick="addPlant()">+</button>
+                        <h1 id="plantsListCount">(0)</h1>
+                        <ul id="plantsList">
+                            <!-- <li><input spellcheck="false" type="text" class="plantListItem" value="euonymus japonicus"><button onclick="removePlant()">-</button></li> -->
+                            <!-- <li><input spellcheck="false" type="text" class="plantListItem" value="berberis aquifolium"><button onclick="removePlant()">-</button></li> -->
+                            <!-- <li><input spellcheck="false" type="text" class="plantListItem" value="helichrysum luteoalbum"><button onclick="removePlant()">-</button></li> -->
+                        </ul>
+
+                        <h2>Customize output:</h2>
+                        <div class="plantsCustom">
+                            <div class="plantsCustomColors">
+                                <h2>Background color: <input type="color" value="#212d40" id="plantidentifier_bgcolor"></h2>
+                                <h2>Header color: <input type="color" value="#9745ba"id="plantidentifier_classcolor"></h2>
+                                <h2>Plant color: <input type="color" value="#4d8242"id="plantidentifier_plantcolor"></h2>
+                                <h2>Error color: <input type="color" value="#a63d3d"id="plantidentifier_errorcolor"></h2>
+                                <h2>Line color: <input type="color" value="#b4eb34"id="plantidentifier_linecolor"></h2>
+                                <h2>Header text color: <input type="color" value="#ffffff"id="plantidentifier_htextcolor"></h2>
+                                <h2>Plant text color: <input type="color" value="#ffffff"id="plantidentifier_ptextcolor"></h2>
+                            </div>
+                            <div class="plantsCustomSpacing">
+                                <h3 class="warningText">Caution!<br> Changing these values may lead to unwanted results!</h3><br>
+                                <h2>Horizontal spacing: <input type="number" id="plantidentifier_hspacing" value="130"></h2>
+                                <h2>Vertical spacing: <input type="number" id="plantidentifier_vspacing" value="15"></h2>
+                            </div>
+                        </div>
+
+                        <button class="plantsGenerate" onclick="PlantIdentifier_Tree()">Generate tree</button>
+                    </div>
+                    <div id="plantsOutput">
+                        <canvas id="plantsOutputImage" width="2560px" height="1600px"></canvas>
+                        <!-- <img id="plantsOutputImage"> -->
+                    </div>
+                    <br>
+                    <h3 class="warningText">If results are missing certain plants or are incorrect, make sure you input each plant as a species</h3>
+                    <button id="plantsOutputDownload" onclick="downloadPlantTree()">Download tree as PNG</button>
+                </div>
+            </div>
+        </div>
+        <div class="applicationsSidebar">
+            <h1>Applications list:</h1>
+            <ul class="appSidebarList">
+                <li><a href="#PlantIdentifier">PlantIdentifier</a></li>
+                <!-- <li><button onclick="scrollToId('PlantIdentifier')">PlantIdentifier</button></li> -->
+                <!-- <li><button onclick="scrollToId('PlantIdentifier2')">PlantIdentifier2</button></li> -->
+            </ul>
+        </div>
+    </div>
+
+    <div id="footer">
+    </div>
+</body>
+</html>
