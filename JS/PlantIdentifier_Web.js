@@ -177,7 +177,7 @@ function drawRectangle(context, errorColor, color, textcolor, text, row, column)
     const y1 = ((boxHeight + vspacing) * row) - boxHeight;
     var fillText = text;
     var fillColor = color;
-    if (text == undefined || text == "undefined") {
+    if (text == undefined || text == "undefined" || text == "-") {
         fillText = "-";
         fillColor = errorColor;
     }
