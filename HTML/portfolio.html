@@ -13,7 +13,45 @@
     </div>
 
     <div class="main_content">
-        <embed type="application/pdf" class="portfolio" src="../documents/Resume.pdf"></embed>
+        <div class="projectsSidebar">
+            <h1>Projects list:</h1>
+            <ul class="appSidebarList">
+                <li><a href="#PlantIdentifier">PlantIdentifier 🌱</a></li>
+                <li><a href="#PointDirectionDetection">Point-Direction-Detection</a></li>
+                <!-- <li><button onclick="scrollToId('PlantIdentifier')">PlantIdentifier</button></li> -->
+                <!-- <li><button onclick="scrollToId('PlantIdentifier2')">PlantIdentifier2</button></li> -->
+            </ul>
+        </div>
+        <!-- <embed type="application/pdf" class="portfolio" src="../documents/Resume.pdf"></embed> -->
+        <div class="portfolioContent">
+            <h2>Portfolio</h2>
+            <p>Here is a summary of my projects, achievements and successes throughout my life. 
+                My most commonly used programming languages are Python and Java, but I have experimented with others as well.
+                These articles will contain short summaries of my projects, as well as any relevant links and resources, if applicable.
+            </p>
+            <!-- <p>Some quick links can be found here:</p> -->
+            <div>
+                <h2 id="PlantIdentifier">PlantIdentifier 🌱</h2>
+                <p>Information on this project can be found directly on its preview, accessible <a href="apps.html#PlantIdentifier">here on this website</a>
+                    The project comes from a previous project I made, published on my <a target="_blank" href="https://github.com/SimoKapi/PlantIdentifier">GitHub</a>, titled PlantIdentifier
+                    After I helped some fellow classmates I decided I could make it publically accessible, for which reason I remade it in JavaScript to make it faster, 
+                    independent and runnable anywhere from just this website.
+                </p>
+                <h3>Preview:</h3>
+                <img src="../imgs/PlantIdentifier.png">
+            </div>
+            <div>
+                <h2 id="PointDirectionDetection">Point-Direction-Detection</h2>
+                <p>A very simple python script I made some time ago. It uses the front camera to track your hands, specifically your index fingers. It then
+                    calculates which direction each finger is pointing in and displays the vectors for the 2d rotation, relative to the 2d viewport. The program
+                    also displays a helpful overlay over the video, with a line extending the direction of your index finger. This project can be used in various
+                    situations and could be a convenience for many developers. The GitHub link to this project is <a href="https://github.com/SimoKapi/Point-Direction-Detection" target="_blank">here</a>.
+                </p>
+                <p>This program makes use of Mediapipe's pretrained models to identify hand positions and motions, as well as OpenCV to obtain video data.</p>
+                <h3>Preview:</h3>
+                <img src="../imgs/Point-Direction-Detection.png">
+            </div>
+        </div>
     </div>
 
     <div id="footer">
